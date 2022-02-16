@@ -37,13 +37,12 @@ function calculateExpenses() {
   previousTotalExpenses.innerText = totalExpenses;
   const balance = document.getElementById("balance");
   balance.innerText = incomeInputValue - totalExpenses;
-  incomeInputValue.value = "";
 }
 // function to calculate the saving
 function calculateSaving() {
   const incomeInputValue = getInputValue("income-input");
   const getPercentageValue = getInputValue("percentage-input");
-  if (getPercentageValue < 0) {
+  if (getPercentageValue < 0 || getPercentageValue == "") {
     alert("Error 404! Please Enter a Positive Number");
     return;
   }
@@ -58,7 +57,7 @@ function calculateSaving() {
   const remainingBalance = balanceAmount - savingAmount;
   previousRemainingBalance.innerText = remainingBalance;
   if (savingAmount > balanceAmount) {
-    alert("You do not have enough taka for saving");
+    alert("You do not have enough money for saving");
     previousSaving.innerText = "";
     previousRemainingBalance.innerText = "";
     return;
@@ -68,6 +67,7 @@ function calculateSaving() {
 document.getElementById("calculate-btn").addEventListener("click", function () {
   calculateExpenses();
 });
+// event handle for save button
 document.getElementById("save-btn").addEventListener("click", function () {
   calculateSaving();
 });
