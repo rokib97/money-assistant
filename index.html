@@ -107,21 +107,50 @@
                 >
                   <h4 class="mx-2">Save:</h4>
                   <input
+                    id="percentage-input"
                     class="p-2 w-25 bg-light rounded-3"
                     type="number"
                     name=""
                     id=""
                   />
                   <p class="fs-3 mx-4 mt-3">%</p>
-                  <button class="btn-lg btn-info fw-bold text-white border-0">
+                  <button
+                    id="save-btn"
+                    class="btn-lg btn-info fw-bold text-white border-0"
+                  >
                     Save
                   </button>
                 </div>
-                <h3 class="text-center fw-bold mb-3">Saving Amount:</h3>
-                <h3 class="text-center fw-bold">Remaining Balance:</h3>
+                <h3 class="text-center fw-bold mb-3">
+                  Saving Amount: <span id="saving-amount"></span>
+                </h3>
+                <h3 class="text-center fw-bold">
+                  Remaining Balance: <span id="previous-balance"></span>
+                </h3>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="..." />
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Hello, world! This is a toast message.</div>
         </div>
       </section>
     </main>
