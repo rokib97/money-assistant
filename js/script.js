@@ -9,8 +9,17 @@ function calculateExpenses() {
   const foodInputValue = getInputValue("food-input");
   const rentInputValue = getInputValue("rent-input");
   const clothesInputValue = getInputValue("clothes-input");
-  if (incomeInputValue < 0 || incomeInputValue == "") {
-    alert("Error 404! Please Enter a Positive Number");
+  if (
+    incomeInputValue < 0 ||
+    incomeInputValue == "" ||
+    foodInputValue < 0 ||
+    foodInputValue == "" ||
+    rentInputValue < 0 ||
+    rentInputValue == "" ||
+    clothesInputValue < 0 ||
+    clothesInputValue == ""
+  ) {
+    alert("Error 404! Please Input with a Positive Number");
     return;
   }
   const totalExpenses =
