@@ -37,6 +37,7 @@ function calculateExpenses() {
   previousTotalExpenses.innerText = totalExpenses;
   const balance = document.getElementById("balance");
   balance.innerText = incomeInputValue - totalExpenses;
+  incomeInputValue.value = "";
 }
 // function to calculate the saving
 function calculateSaving() {
