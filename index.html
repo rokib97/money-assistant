@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MPB Digital</title>
+    <title>Money Debugger</title>
     <!------ bootstrap cdn------>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -19,8 +19,8 @@
     <!--header section strats here--->
     <header>
       <section class="container mb-5">
-        <h1 class="text-center mt-4 display-4 fw-bolder text-success">
-          MPB Digital
+        <h1 class="text-center mt-4 display-4 fw-bolder text-info">
+          Money Debugger
         </h1>
       </section>
     </header>
@@ -46,6 +46,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto">
                   <h4 class="me-3">Income:</h4>
                   <input
+                    id="income-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
                     name=""
@@ -58,6 +59,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto mb-3">
                   <h4 class="me-5">Food:</h4>
                   <input
+                    id="food-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
                     name=""
@@ -67,6 +69,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto my-3">
                   <h4 class="me-5">Rent:</h4>
                   <input
+                    id="rent-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
                     name=""
@@ -76,6 +79,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto mb-3">
                   <h4 class="me-3">Clothes:</h4>
                   <input
+                    id="clothes-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
                     name=""
@@ -86,13 +90,18 @@
                   class="d-flex justify-content-center align-items-center mb-4"
                 >
                   <button
-                    class="btn-lg btn-success fw-bold text-white border-0"
+                    id="calculate-btn"
+                    class="btn-lg btn-info fw-bold text-white border-0"
                   >
                     Calculate
                   </button>
                 </div>
-                <h3 class="text-center fw-bold mb-3">Total Expenses:</h3>
-                <h3 class="text-center fw-bold">Balance:</h3>
+                <h3 class="text-center fw-bold mb-3">
+                  Total Expenses: <span id="total-expenses"></span>
+                </h3>
+                <h3 class="text-center fw-bold">
+                  Balance: <span id="balance"></span>
+                </h3>
                 <div
                   class="d-flex justify-content-center align-items-center my-4"
                 >
@@ -104,9 +113,7 @@
                     id=""
                   />
                   <p class="fs-3 mx-4 mt-3">%</p>
-                  <button
-                    class="btn-lg btn-success fw-bold text-white border-0"
-                  >
+                  <button class="btn-lg btn-info fw-bold text-white border-0">
                     Save
                   </button>
                 </div>
