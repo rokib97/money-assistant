@@ -46,6 +46,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto">
                   <h4 class="me-3">Income:</h4>
                   <input
+                    required
                     id="income-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
@@ -59,6 +60,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto mb-3">
                   <h4 class="me-5">Food:</h4>
                   <input
+                    required
                     id="food-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
@@ -69,6 +71,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto my-3">
                   <h4 class="me-5">Rent:</h4>
                   <input
+                    required
                     id="rent-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
@@ -79,6 +82,7 @@
                 <div class="d-flex justify-content-center w-75 mx-auto mb-3">
                   <h4 class="me-3">Clothes:</h4>
                   <input
+                    required
                     id="clothes-input"
                     class="p-1 w-50 bg-light rounded-3"
                     type="number"
@@ -96,6 +100,18 @@
                     Calculate
                   </button>
                 </div>
+                <p
+                  id="para"
+                  class="text-center fw-bold bg-danger w-75 mx-auto text-white rounded-pill p-1"
+                >
+                  Please Give A Positive Number In The Input Fields
+                </p>
+                <p
+                  id="para-one"
+                  class="text-center fw-bold bg-danger w-75 mx-auto text-white rounded-pill p-1"
+                >
+                  You Don't have Enough Balance to Expense
+                </p>
                 <h3 class="text-center fw-bold mb-3">
                   Total Expenses: <span id="total-expenses"></span>
                 </h3>
@@ -107,6 +123,7 @@
                 >
                   <h4 class="mx-2">Save:</h4>
                   <input
+                    required
                     id="percentage-input"
                     class="p-2 w-25 bg-light rounded-3"
                     type="number"
@@ -121,6 +138,18 @@
                     Save
                   </button>
                 </div>
+                <p
+                  id="para-three"
+                  class="text-center fw-bold bg-danger w-75 mx-auto text-white rounded-pill p-1"
+                >
+                  You do not have enough money for saving
+                </p>
+                <p
+                  id="para-two"
+                  class="text-center fw-bold bg-danger w-75 mx-auto text-white rounded-pill p-1"
+                >
+                  Please Enter a Positive Number In The Saving Field
+                </p>
                 <h3 class="text-center fw-bold mb-3">
                   Saving Amount: <span id="saving-amount"></span>
                 </h3>

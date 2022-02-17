@@ -2,6 +2,10 @@
 function getInputValue(inputId) {
   return document.getElementById(inputId).value;
 }
+// function to get the element for innerText
+function catchElement(inputId) {
+  return document.getElementById(inputId);
+}
 
 // function to calculate the expenses
 function calculateExpenses() {
@@ -19,7 +23,7 @@ function calculateExpenses() {
     clothesInputValue < 0 ||
     clothesInputValue == ""
   ) {
-    alert("Error 404! Please Input with a Positive Number");
+    catchElement("para").style.display = "block";
     return;
   }
   const totalExpenses =
@@ -28,14 +32,14 @@ function calculateExpenses() {
     parseFloat(clothesInputValue);
 
   if (totalExpenses > incomeInputValue) {
-    alert("You Don't have Enough Balance to Expense");
+    catchElement("para-one").style.display = "block";
     return;
   }
 
   // update total expenses and balance
-  const previousTotalExpenses = document.getElementById("total-expenses");
+  const previousTotalExpenses = catchElement("total-expenses");
   previousTotalExpenses.innerText = totalExpenses;
-  const balance = document.getElementById("balance");
+  const balance = catchElement("balance");
   balance.innerText = incomeInputValue - totalExpenses;
 }
 // function to calculate the saving
@@ -43,21 +47,22 @@ function calculateSaving() {
   const incomeInputValue = getInputValue("income-input");
   const getPercentageValue = getInputValue("percentage-input");
   if (getPercentageValue < 0 || getPercentageValue == "") {
-    alert("Error 404! Please Enter a Positive Number");
+    catchElement("para-two").style.display = "block";
     return;
   }
-  const previousSaving = document.getElementById("saving-amount");
+  // update savings
+  const previousSaving = catchElement("saving-amount");
   const savingAmount = (incomeInputValue * getPercentageValue) / 100;
   previousSaving.innerText = savingAmount;
 
-  //   update savings and remain balance
-  const balance = document.getElementById("balance");
+  // update remain balance
+  const balance = catchElement("balance");
   const balanceAmount = balance.innerText;
-  const previousRemainingBalance = document.getElementById("previous-balance");
-  const remainingBalance = balanceAmount - savingAmount;
+  const previousRemainingBalance = catchElement("previous-balance");
+  const remainingBalance = parseFloat(balanceAmount) - parseFloat(savingAmount);
   previousRemainingBalance.innerText = remainingBalance;
   if (savingAmount > balanceAmount) {
-    alert("You do not have enough money for saving");
+    catchElement("para-three").style.display = "block";
     previousSaving.innerText = "";
     previousRemainingBalance.innerText = "";
     return;
